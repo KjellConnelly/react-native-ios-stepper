@@ -54,3 +54,7 @@ render() {
 ```
 
 There is no increment value, as all steppers increment by + or - 1. You'll have to do the math yourself.
+
+## Note
+
+This component uses a compilation of React-Native components to mimic a UIStepper. It does not actually use a USStepper though.
