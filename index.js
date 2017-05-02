@@ -24,13 +24,13 @@ export default class Stepper extends React.Component {
   render() {
     return (
       <View style={{borderColor:this.props.color,...styles.view}}>
-        <TouchableOpacity disabled={this.state.value <= this.state.minValue} style={{flex:1}} onPress={this.onPress.bind(this, -1)}>
+        <TouchableOpacity disabled={this.state.value <= this.state.minValue} style={{flex:1,paddingBottom:2}} onPress={this.onPress.bind(this, -1)}>
           <Text style={{...styles.text, color:(this.state.value > this.state.minValue ? this.props.color : this.props.disabledColor)}}>
             -
           </Text>
         </TouchableOpacity>
         <View style={{width:1,height:27,backgroundColor:this.props.color}}/>
-        <TouchableOpacity disabled={this.state.value >= this.state.maxValue} style={{flex:1}} onPress={this.onPress.bind(this, 1)}>
+        <TouchableOpacity disabled={this.state.value >= this.state.maxValue} style={{flex:1,paddingBottom:2}} onPress={this.onPress.bind(this, 1)}>
           <Text style={{...styles.text, color:(this.state.value < this.state.maxValue ? this.props.color : this.props.disabledColor)}}>
             +
           </Text>

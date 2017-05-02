@@ -1,8 +1,12 @@
 'use strict';
 
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -24,7 +28,7 @@ var Stepper = function (_React$Component) {
   function Stepper(props) {
     _classCallCheck(this, Stepper);
 
-    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
+    var _this = _possibleConstructorReturn(this, (Stepper.__proto__ || Object.getPrototypeOf(Stepper)).call(this, props));
 
     _this.state = {
       value: _this.props.value,
@@ -34,41 +38,45 @@ var Stepper = function (_React$Component) {
     return _this;
   }
 
-  Stepper.prototype.onPress = function onPress(value) {
-    var newValue = undefined;
-    if (this.state.value + value >= this.state.minValue && this.state.value + value <= this.state.maxValue) {
-      newValue = this.state.value + value;
+  _createClass(Stepper, [{
+    key: 'onPress',
+    value: function onPress(value) {
+      var newValue = undefined;
+      if (this.state.value + value >= this.state.minValue && this.state.value + value <= this.state.maxValue) {
+        newValue = this.state.value + value;
+      }
+      if (newValue != undefined) {
+        this.setState({ value: newValue });
+      }
     }
-    if (newValue != undefined) {
-      this.setState({ value: newValue });
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        _reactNative.View,
+        { style: _extends({ borderColor: this.props.color }, styles.view) },
+        _react2.default.createElement(
+          _reactNative.TouchableOpacity,
+          { disabled: this.state.value <= this.state.minValue, style: { flex: 1, paddingBottom: 2 }, onPress: this.onPress.bind(this, -1) },
+          _react2.default.createElement(
+            _reactNative.Text,
+            { style: _extends({}, styles.text, { color: this.state.value > this.state.minValue ? this.props.color : this.props.disabledColor }) },
+            '-'
+          )
+        ),
+        _react2.default.createElement(_reactNative.View, { style: { width: 1, height: 27, backgroundColor: this.props.color } }),
+        _react2.default.createElement(
+          _reactNative.TouchableOpacity,
+          { disabled: this.state.value >= this.state.maxValue, style: { flex: 1, paddingBottom: 2 }, onPress: this.onPress.bind(this, 1) },
+          _react2.default.createElement(
+            _reactNative.Text,
+            { style: _extends({}, styles.text, { color: this.state.value < this.state.maxValue ? this.props.color : this.props.disabledColor }) },
+            '+'
+          )
+        )
+      );
     }
-  };
-
-  Stepper.prototype.render = function render() {
-    return _react2.default.createElement(
-      _reactNative.View,
-      { style: _extends({ borderColor: this.props.color }, styles.view) },
-      _react2.default.createElement(
-        _reactNative.TouchableOpacity,
-        { disabled: this.state.value <= this.state.minValue, style: { flex: 1 }, onPress: this.onPress.bind(this, -1) },
-        _react2.default.createElement(
-          _reactNative.Text,
-          { style: _extends({}, styles.text, { color: this.state.value > this.state.minValue ? this.props.color : this.props.disabledColor }) },
-          '-'
-        )
-      ),
-      _react2.default.createElement(_reactNative.View, { style: { width: 1, height: 27, backgroundColor: this.props.color } }),
-      _react2.default.createElement(
-        _reactNative.TouchableOpacity,
-        { disabled: this.state.value >= this.state.maxValue, style: { flex: 1 }, onPress: this.onPress.bind(this, 1) },
-        _react2.default.createElement(
-          _reactNative.Text,
-          { style: _extends({}, styles.text, { color: this.state.value < this.state.maxValue ? this.props.color : this.props.disabledColor }) },
-          '+'
-        )
-      )
-    );
-  };
+  }]);
 
   return Stepper;
 }(_react2.default.Component);
