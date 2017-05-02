@@ -2,7 +2,7 @@
   "name": "react-native-ios-stepper",
   "version": "1.0.0",
   "description": "react-native component for iOS, android, and web. Looks like the actual iOS stepper unlike many of the other open source components which aren't the right size.",
-  "main": "index.js",
+  "main": "index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

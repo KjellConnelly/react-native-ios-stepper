@@ -49,7 +49,7 @@ Stepper.propTypes = {
 }
 
 Stepper.defaultProps = {
-  color: "rgb(0,0,0)",
+  color: "rgb(0,122,255)",
   disabledColor: "rgb(181, 181, 181)",
   value: 0,
   minValue: 0,
