@@ -18,8 +18,10 @@ import Stepper from 'react-native-ios-stepper'
 render() {
     return {
         <View>
-            <Stepper maxValue={this.state.maxValue} />
-            <Text>{this.state.maxValue}</Text>
+            <Stepper maxValue={10} onPress={(index)=>{
+                this.setState({value:index})
+            }/>
+            <Text>{this.state.value}</Text>
         </View>
     }
 }
@@ -30,6 +32,15 @@ render() {
 // Required
 <Stepper maxValue={number} />
 ```
+
+```
+// Required
+<Stepper onPress={(index)=>{
+    console.log(index + " Pressed")
+} />
+```
+
+
 
 ```
 // Optional, Default Value = 0. This is the current value the stepper starts at

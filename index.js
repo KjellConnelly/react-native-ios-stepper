@@ -18,6 +18,7 @@ export default class Stepper extends React.Component {
     }
     if (newValue != undefined) {
       this.setState({value: newValue})
+      this.props.onPress(newValue)
     }
   }
 
@@ -45,6 +46,7 @@ Stepper.propTypes = {
   disabledColor: React.PropTypes.string,
   value: React.PropTypes.number,
   minValue: React.PropTypes.number,
+  onPress: React.PropTypes.func.isRequired,
   maxValue: React.PropTypes.number.isRequired,
 }
 

@@ -47,6 +47,7 @@ var Stepper = function (_React$Component) {
       }
       if (newValue != undefined) {
         this.setState({ value: newValue });
+        this.props.onPress(newValue);
       }
     }
   }, {
@@ -89,6 +90,7 @@ Stepper.propTypes = {
   disabledColor: _react2.default.PropTypes.string,
   value: _react2.default.PropTypes.number,
   minValue: _react2.default.PropTypes.number,
+  onPress: _react2.default.PropTypes.func.isRequired,
   maxValue: _react2.default.PropTypes.number.isRequired
 };
 
