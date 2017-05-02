@@ -2,6 +2,7 @@
 
 Even though it's called iOS Stepper, this works on for Android and iOS. It also works using react-native-web. It's called iOS Stepper because it looks like the iOS10 version of UIStepper. The other open source components I found didn't look right, and they often times didn't work with react-native-web.'
 
+![alt text](https://raw.githubusercontent.com/kjellconnelly/react-native-ios-stepper/master/example/ss.png "MPMediaPickerController - iOS")
 
 ## Installation
 
