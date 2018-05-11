@@ -60,8 +60,8 @@ render() {
 
 ```
 // Optional, Default Value = "rgb(181,181,181)"
-// This sets the color for the + and - buttons when you they're disabled. The default value is just a grey that looks good to me, but isn't an official value
-<Stepper disabledColor={string} />
+// This sets the color for the + and - buttons when you they're disabled. The default value is just a grey that looks good to me, but isn't an official value. This also removes fontScaling for the <Text/> components.
+<Stepper allowFontScaling={false} disabledColor={string} />
 ```
 
 There is no increment value, as all steppers increment by + or - 1. You'll have to do the math yourself.

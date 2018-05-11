@@ -26,13 +26,13 @@ export default class Stepper extends React.Component {
     return (
       <View style={{borderColor:this.props.color,...styles.view}}>
         <TouchableOpacity disabled={this.state.value <= this.state.minValue} style={{flex:1,paddingBottom:2}} onPress={this.onPress.bind(this, -1)}>
-          <Text style={{...styles.text, color:(this.state.value > this.state.minValue ? this.props.color : this.props.disabledColor)}}>
+          <Text allowFontScaling={this.props.allowFontScaling} style={{...styles.text, color:(this.state.value > this.state.minValue ? this.props.color : this.props.disabledColor)}}>
             -
           </Text>
         </TouchableOpacity>
         <View style={{width:1,height:27,backgroundColor:this.props.color}}/>
         <TouchableOpacity disabled={this.state.value >= this.state.maxValue} style={{flex:1,paddingBottom:2}} onPress={this.onPress.bind(this, 1)}>
-          <Text style={{...styles.text, color:(this.state.value < this.state.maxValue ? this.props.color : this.props.disabledColor)}}>
+          <Text allowFontScaling={this.props.allowFontScaling} style={{...styles.text, color:(this.state.value < this.state.maxValue ? this.props.color : this.props.disabledColor)}}>
             +
           </Text>
         </TouchableOpacity>
@@ -48,6 +48,7 @@ Stepper.propTypes = {
   minValue: React.PropTypes.number,
   onPress: React.PropTypes.func.isRequired,
   maxValue: React.PropTypes.number.isRequired,
+  allowFontScaling:React.PropTypes.bool,
 }
 
 Stepper.defaultProps = {
@@ -55,6 +56,7 @@ Stepper.defaultProps = {
   disabledColor: "rgb(181, 181, 181)",
   value: 0,
   minValue: 0,
+  allowFontScaling:true,
 }
 
 const styles = {
@@ -65,6 +67,7 @@ const styles = {
     height:27,
     flexDirection:"row",
     alignItems:"center",
+    backgroundColor:'transparent',
   },
   text: {
     textAlign:"center",
