@@ -1,10 +1,11 @@
 {
   "name": "react-native-ios-stepper",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "react-native component for iOS, android, and web. Looks like the actual iOS stepper unlike many of the other open source components which aren't the right size.",
   "main": "index",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm --no-git-tag-version version patch && git add . && git commit -am \"Next Version\" && git push && npm publish"
   },
   "keywords": [
     "react",

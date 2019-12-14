@@ -1,4 +1,5 @@
 import React, { Component, } from 'react'
+import PropTypes from 'prop-types'
 import {View, Text, Button, Platform, ScrollView, TouchableOpacity} from 'react-native'
 
 export default class Stepper extends React.Component {
@@ -42,13 +43,13 @@ export default class Stepper extends React.Component {
 }
 
 Stepper.propTypes = {
-  color: React.PropTypes.string,
-  disabledColor: React.PropTypes.string,
-  value: React.PropTypes.number,
-  minValue: React.PropTypes.number,
-  onPress: React.PropTypes.func.isRequired,
-  maxValue: React.PropTypes.number.isRequired,
-  allowFontScaling:React.PropTypes.bool,
+  color: PropTypes.string,
+  disabledColor: PropTypes.string,
+  value: PropTypes.number,
+  minValue: PropTypes.number,
+  onPress: PropTypes.func.isRequired,
+  maxValue: PropTypes.number.isRequired,
+  allowFontScaling:PropTypes.bool,
 }
 
 Stepper.defaultProps = {
